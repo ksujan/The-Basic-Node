@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/ksujan/The-Basic-Node#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "ejs": "^2.4.1",
+    "express": "^4.13.4",
+    "instagram-node": "^0.5.8"
   }
 }

@@ -1,17 +1,37 @@
-// grab express
+// grab the packages/variables we need
 var express = require('express');
-
-// create an express app
 var app = express();
+var ig = require('instagram-node').instagram();
 
-// create an express route for the home page
-// http://localhost:8080/
-app.get('/', function(req, res) {
-    res.sendfile('index.html');
+// configure the app
+// =================================================
+// tell node where to look for the site resources
+app.use(express.static(__dirname + '/public'));
+
+// set the view engine to ejs
+app.set('view engine', 'ejs');
+
+// configure instagram app with client-id
+ig.use({
+    client_id: 'e53c88191766433897d1e6e52d9f3749',
+    client_secret: '00e5b333f5504651af822dcf4afc8558'
 });
 
-//start the server on port 8080
-app.listen(8080);
 
-//send a message
-console.log('Server has started!');
+// set the routes
+// =================================================
+// home page route - popular images
+app.get('/', function(req, res) {
+
+    // use the instagram package to get popular media
+    ig.media_popular(function(err, medias, remaining, limit) {
+        // render the home page and apss in the popular images
+        res.render('pages/index', { grams: medias });
+    });
+
+});
+
+// start the server
+// ================================================
+app.listen(8080);
+console.log('App started! Look at http://localhost:8080');
