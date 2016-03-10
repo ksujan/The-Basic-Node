@@ -1,0 +1,22 @@
+{
+  "name": "simple-node-app",
+  "version": "1.0.0",
+  "description": "A simple NodeJS application which is built to learn the basics of NodeJS.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ksujan/The-Basic-Node.git"
+  },
+  "keywords": [
+    "nodejs"
+  ],
+  "author": "Md. Khairul Hasan Sujan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ksujan/The-Basic-Node/issues"
+  },
+  "homepage": "https://github.com/ksujan/The-Basic-Node#readme"
+}
